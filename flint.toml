@@ -1,0 +1,15 @@
+[flint]
+version = 1
+
+[common]
+
+[rules]
+
+[tests.jest]
+
+[config]
+
+[ci.github-actions]
+
+[report.json]
+outputPath = "reports"
