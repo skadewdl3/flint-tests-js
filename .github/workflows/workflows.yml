@@ -1,0 +1,30 @@
+on:
+  pull_request:
+    branches:
+    - main
+  push:
+    branches:
+    - main
+name: Flint CI
+jobs:
+  flint_checks:
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - uses: robinraju/release-downloader@v1
+      name: Install Flint
+      with:
+        latest: true
+        repository: skadewdl3/flint
+        out-file-path: .
+        fileName: flint
+        prerelease: true
+    - name: Run Tests
+      run: "                            chmod +x ./flint\n                            ./flint test --test\n                            echo \"Processing test results...\"\n                        "
+    - uses: actions/upload-artifact@v4
+      name: Upload Test Results
+      with:
+        name: .flint/reports/reports/report.json
+        path: .flint/reports/reports/report.json
+    name: Flint Checks
+    runs-on: ubuntu-latest
