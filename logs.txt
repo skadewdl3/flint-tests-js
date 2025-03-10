@@ -231,3 +231,16 @@ fatal: unable to access 'https://github.com/skadewdl3/flint/': Could not resolve
 [success]: Generated github-actions config successfully
 [error]: lint directory does not exist
 [success]: Generated github-actions config successfully
+[error]: lint directory does not exist
+[debug]: Loaded plugins: {Plugin { details: PluginDetails { id: "github-actions", extensions: [], version: "1.0.0", author: "Your Name" }, path: "./flint-plugins/ci/github-actions", kind: Ci }, Plugin { details: PluginDetails { id: "jest", extensions: ["js", "ts", "mjs", "cjs"], version: "0.0.1", author: "Soham Karandikar" }, path: "./flint-plugins/test/jest", kind: Test }, Plugin { details: PluginDetails { id: "json", extensions: [], version: "1.0.0", author: "Soham Karandikar" }, path: "./flint-plugins/report/json", kind: Report }}
+[info]: Running command: [
+    "jest",
+    "--json",
+]
+[success]: Reported jest to reports/report.json successfully
+[error]: lint directory does not exist
+[success]: Generated github-actions config successfully
+[error]: lint directory does not exist
+[success]: Generated github-actions config successfully
+[error]: lint directory does not exist
+[success]: Generated github-actions config successfully
