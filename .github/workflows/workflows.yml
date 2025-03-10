@@ -11,16 +11,24 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+    - name: Install Git
+      run: "                        sudo apt-get update\n                        sudo apt-get install -y git\n                        "
     - uses: actions/setup-node@v3
       name: Install Node.js
       with:
         node-version: 18.x
     - name: Install Jest and ESLint
-      run: "                                npm install -g jest eslint --no-fund --no-audit --silent\n                                echo \"Node.js, Jest, and ESLint installed successfully\"\n                                "
-    - name: Install Flint
-      run: "                            git clone https://github.com/skadewdl3/flint\n                            cd flint\n                            cargo build --release\n                            cp target/release/flint ../flint\n                            echo \"$PWD\" >> $GITHUB_PATH\n                            cd ..\n                            chmod +x ./flint\n                        "
+      run: "                                                npm install -g jest eslint --no-fund --no-audit --silent\n                                                echo \"Node.js, Jest, and ESLint installed successfully\"\n                                            "
+    - uses: robinraju/release-downloader@v1
+      name: Install Flint
+      with:
+        latest: true
+        repository: skadewdl3/flint
+        fileName: flint
+        out-file-path: .
+        prerelease: true
     - name: Run Tests
-      run: "                            ./flint test --test\n                            echo \"Processing test results...\"\n                        "
+      run: "                            chmod +x ./flint\n                            ./flint install\n                            ./flint test --test\n                        "
     - uses: actions/upload-artifact@v4
       name: Upload Test Results
       with:
