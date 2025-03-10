@@ -28,7 +28,7 @@ jobs:
       with:
         name: .flint/reports/reports/report.json
         path: .flint/reports/reports/report.json
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       name: Upload Logs
       with:
         name: logs
