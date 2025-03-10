@@ -223,3 +223,5 @@ fatal: unable to access 'https://github.com/skadewdl3/flint/': Could not resolve
 [success]: Reported jest to reports/report.json successfully
 [error]: lint directory does not exist
 [success]: Generated github-actions config successfully
+[error]: lint directory does not exist
+[success]: Generated github-actions config successfully
