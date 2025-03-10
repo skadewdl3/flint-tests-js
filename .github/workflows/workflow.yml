@@ -17,7 +17,7 @@ jobs:
       run: "                            git clone https://github.com/skadewdl3/flint\n                            cd flint\n                            cargo build --release\n                            cp target/release/flint ../flint\n                            echo \"$PWD\" >> $GITHUB_PATH\n                            cd ..\n                            chmod +x ./flint\n                        "
     - name: Run Tests
       run: "                            ./flint test --test\n                            echo \"Processing test results...\"\n                        "
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       name: Upload Test Results
       with:
         name: .flint/reports/reports/report.json
