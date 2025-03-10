@@ -16,8 +16,8 @@ jobs:
       with:
         latest: true
         repository: skadewdl3/flint
-        out-file-path: .
         fileName: flint
+        out-file-path: .
         prerelease: true
     - name: Setup virtual framebuffer
       run: sudo apt-get install -y xvfb

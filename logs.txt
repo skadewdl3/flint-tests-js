@@ -123,3 +123,88 @@ fatal: unable to access 'https://github.com/skadewdl3/flint/': Could not resolve
 [success]: Generated github-actions config successfully
 [error]: lint directory does not exist
 [success]: Generated github-actions config successfully
+[info]: Loading configuration from flint.toml
+[info]: Found 1 test plugins in configuration
+[info]: Found 0 lint plugins in configuration
+[info]: Found 1 CI plugins in configuration
+[info]: Found 1 report plugins in configuration
+[info]: Starting download of all configured plugins
+[info]: Starting download of 1 plugins for test
+[info]: Using repository URL: https://github.com/skadewdl3/flint
+[info]: Starting plugin clone process for test plugins
+[info]: Downloading plugins to: ./flint-plugins
+[info]: Setting up temporary directory at: /tmp/flint-plugins-temp
+[info]: Created temporary directory: /tmp/flint-plugins-temp
+[info]: Plugin type directory: ./flint-plugins/test
+[info]: Created plugin type directory: ./flint-plugins/test
+[info]: Checking if git is installed
+[info]: Git is available and working
+[info]: Cloning repository metadata from https://github.com/skadewdl3/flint
+[info]: Executing git clone with sparse checkout filter
+[error]: [git clone]: Cloning into '/tmp/flint-plugins-temp'...
+
+[info]: Repository cloned successfully, setting up sparse checkout
+[info]: Setting sparse checkout for 1 plugin paths
+[info]: Checking for plugins directory: /tmp/flint-plugins-temp/flint-plugins/test
+[info]: Found plugins directory, copying 1 plugins
+[info]: Processing plugin: jest
+[info]: Copying plugin from /tmp/flint-plugins-temp/flint-plugins/test/jest to ./flint-plugins/test/jest
+[info]: Copied plugin from /tmp/flint-plugins-temp/flint-plugins/test/jest to ./flint-plugins/test/jest
+[info]: Cleaning up temporary directory: /tmp/flint-plugins-temp
+[info]: Removed temporary directory: /tmp/flint-plugins-temp
+[info]: Successfully extracted plugin folders to ./flint-plugins/test
+[info]: Completed downloading test plugins
+[info]: Starting download of 1 plugins for ci
+[info]: Using repository URL: https://github.com/skadewdl3/flint
+[info]: Starting plugin clone process for ci plugins
+[info]: Downloading plugins to: ./flint-plugins
+[info]: Setting up temporary directory at: /tmp/flint-plugins-temp
+[info]: Created temporary directory: /tmp/flint-plugins-temp
+[info]: Plugin type directory: ./flint-plugins/ci
+[info]: Created plugin type directory: ./flint-plugins/ci
+[info]: Checking if git is installed
+[info]: Git is available and working
+[info]: Cloning repository metadata from https://github.com/skadewdl3/flint
+[info]: Executing git clone with sparse checkout filter
+[error]: [git clone]: Cloning into '/tmp/flint-plugins-temp'...
+
+[info]: Repository cloned successfully, setting up sparse checkout
+[info]: Setting sparse checkout for 1 plugin paths
+[info]: Checking for plugins directory: /tmp/flint-plugins-temp/flint-plugins/ci
+[info]: Found plugins directory, copying 1 plugins
+[info]: Processing plugin: github-actions
+[info]: Copying plugin from /tmp/flint-plugins-temp/flint-plugins/ci/github-actions to ./flint-plugins/ci/github-actions
+[info]: Copied plugin from /tmp/flint-plugins-temp/flint-plugins/ci/github-actions to ./flint-plugins/ci/github-actions
+[info]: Cleaning up temporary directory: /tmp/flint-plugins-temp
+[info]: Removed temporary directory: /tmp/flint-plugins-temp
+[info]: Successfully extracted plugin folders to ./flint-plugins/ci
+[info]: Completed downloading ci plugins
+[info]: Starting download of 1 plugins for report
+[info]: Using repository URL: https://github.com/skadewdl3/flint
+[info]: Starting plugin clone process for report plugins
+[info]: Downloading plugins to: ./flint-plugins
+[info]: Setting up temporary directory at: /tmp/flint-plugins-temp
+[info]: Created temporary directory: /tmp/flint-plugins-temp
+[info]: Plugin type directory: ./flint-plugins/report
+[info]: Created plugin type directory: ./flint-plugins/report
+[info]: Checking if git is installed
+[info]: Git is available and working
+[info]: Cloning repository metadata from https://github.com/skadewdl3/flint
+[info]: Executing git clone with sparse checkout filter
+[error]: [git clone]: Cloning into '/tmp/flint-plugins-temp'...
+
+[info]: Repository cloned successfully, setting up sparse checkout
+[info]: Setting sparse checkout for 1 plugin paths
+[info]: Checking for plugins directory: /tmp/flint-plugins-temp/flint-plugins/report
+[info]: Found plugins directory, copying 1 plugins
+[info]: Processing plugin: json
+[info]: Copying plugin from /tmp/flint-plugins-temp/flint-plugins/report/json to ./flint-plugins/report/json
+[info]: Copied plugin from /tmp/flint-plugins-temp/flint-plugins/report/json to ./flint-plugins/report/json
+[info]: Cleaning up temporary directory: /tmp/flint-plugins-temp
+[info]: Removed temporary directory: /tmp/flint-plugins-temp
+[info]: Successfully extracted plugin folders to ./flint-plugins/report
+[info]: Completed downloading report plugins
+[info]: All plugins downloaded successfully
+[success]: Plugins downloaded successfully
+[error]: lint directory does not exist
+[success]: Generated github-actions config successfully
