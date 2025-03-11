@@ -1,0 +1,43 @@
+on:
+  pull_request:
+    branches:
+    - main
+  push:
+    branches:
+    - main
+name: Flint CI
+jobs:
+  flint_checks:
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Install Git
+      run: "                        sudo apt-get update\n                        sudo apt-get install -y git\n                        "
+    - uses: actions/setup-node@v3
+      name: Install Node.js
+      with:
+        node-version: 18.x
+    - name: Install Jest and ESLint
+      run: "                                                npm install -g jest eslint --no-fund --no-audit --silent\n                                                echo \"Node.js, Jest, and ESLint installed successfully\"\n                                            "
+    - uses: robinraju/release-downloader@v1
+      name: Install Flint
+      with:
+        latest: true
+        repository: skadewdl3/flint
+        fileName: flint
+        out-file-path: .
+        prerelease: true
+    - name: Run Tests
+      run: "                            chmod +x ./flint\n                            ./flint install\n                            ./flint test --test\n                        "
+    - uses: actions/upload-artifact@v4
+      name: Upload Test Results
+      with:
+        name: Test Results
+        path: .flint/reports/reports/report.json
+    - uses: actions/upload-artifact@v4
+      name: Upload Logs
+      with:
+        name: Logs
+        path: logs.txt
+    name: Flint Checks
+    runs-on: ubuntu-latest
