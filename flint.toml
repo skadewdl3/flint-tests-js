@@ -20,4 +20,4 @@ test_files_ignore = ["node_modules/", "dist/"]
 [ci.github-actions]
 
 [report.json]
-outputPath = "reports"
+output_path = "reports"
