@@ -10,7 +10,7 @@ jobs:
   flint_checks:
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - uses: actions/setup-node@v3
       name: Install Node.js
       with:
@@ -38,4 +38,4 @@ jobs:
         name: Logs
         path: logs.txt
     name: Flint Checks
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
