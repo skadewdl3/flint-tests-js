@@ -1,5 +1,3 @@
-import jest from 'jest';
-
 export default {
   "testEnvironment": "node",
   "testMatch": [
