@@ -11,8 +11,8 @@ config_path = "src/jest.config.ts"
 test_environment = "node"
 verbose = true
 collect_coverage = true
-test_files_include = [ "src/*.test.js" ]
-test_files_ignore = [ "node_modules/", "dist/" ]
+test_files_include = ["src/*.test.js"]
+test_files_ignore = ["node_modules/", "dist/"]
 
 [config]
 

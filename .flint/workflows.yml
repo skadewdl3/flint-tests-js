@@ -11,14 +11,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    - name: Install Git
-      run: "                        sudo apt-get update\n                        sudo apt-get install -y git\n                        "
     - uses: actions/setup-node@v3
       name: Install Node.js
       with:
         node-version: 18.x
-    - name: Install Jest and ESLint
-      run: "                                                npm install -g jest eslint --no-fund --no-audit --silent\n                                                echo \"Node.js, Jest, and ESLint installed successfully\"\n                                            "
+    - name: Install Node.js dependencies
+      run: npm install -g jest@latest --no-fund --no-audit --silent
     - uses: robinraju/release-downloader@v1
       name: Install Flint
       with:
@@ -28,7 +26,7 @@ jobs:
         out-file-path: .
         prerelease: true
     - name: Run Tests
-      run: "                            chmod +x ./flint\n                            ./flint install\n                            ./flint test --test\n                        "
+      run: "        chmod +x ./flint\n        ./flint install\n        ./flint test --test\n        "
     - uses: actions/upload-artifact@v4
       name: Upload Test Results
       with:
@@ -40,4 +38,4 @@ jobs:
         name: Logs
         path: logs.txt
     name: Flint Checks
-    runs-on: ubuntu-latest
+    runs_on: ubuntu-latest
