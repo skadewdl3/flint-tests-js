@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Testing submodule for JavaScript related libraries and plugins for Flint",
   "main": "index.js",
-  "type": "module",
   "directories": {
     "test": "tests"
   },

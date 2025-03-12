@@ -1,8 +1,9 @@
-import { defineConfig } from "eslint/config"
-import stylistic from "@stylistic/eslint-plugin"
-import stylisticJs from "@stylistic/eslint-plugin-js"
-import stylisticJsx from "@stylistic/eslint-plugin-jsx"
+import { defineConfig, globalIgnores } from "eslint/config"
 import stylisticTs from "@stylistic/eslint-plugin-ts"
+import stylisticJs from "@stylistic/eslint-plugin-js"
+import stylistic from "@stylistic/eslint-plugin"
+import stylisticJsx from "@stylistic/eslint-plugin-jsx"
+import js from "@eslint/js"
 
 export default defineConfig( [
     {
@@ -10,8 +11,15 @@ export default defineConfig( [
             "src/*"
         ],
         ignores: [
-            "node_modules",
-            "coverage"
+            "**/*.config.js"
+        ] 
+    },
+    {
+        plugins: {
+            js: js 
+        },
+        extends: [
+            "js/recommended"
         ] 
     },
     {

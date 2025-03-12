@@ -1,13 +1,13 @@
 export default {
-  "testEnvironment": "node",
-  "testMatch": [
-    "<rootDir>/src/*.test.js"
-  ],
-  "rootDir": ".",
-  "testPathIgnorePatterns": [
-    "node_modules/",
-    "dist/"
-  ],
-  "verbose": true,
-  "collectCoverage": true
-};
+    testEnvironment : "node",
+    testMatch : [
+        "<rootDir>/src/*.test.ts"
+    ],
+    rootDir : ".",
+    collectCoverage : true,
+    verbose : true,
+    testPathIgnorePatterns: [
+        "node_modules/",
+        "dist/"
+    ] 
+}
