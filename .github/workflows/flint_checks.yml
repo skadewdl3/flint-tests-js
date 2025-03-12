@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: 18.x
     - name: Install Node.js dependencies
-      run: npm install -g jest@latest --no-fund --no-audit --silent
+      run: npm install -g eslint@latest jest@latest --no-fund --no-audit --silent
     - uses: robinraju/release-downloader@v1
       name: Install Flint
       with:

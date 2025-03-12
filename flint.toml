@@ -40,8 +40,7 @@ space-before-function-paren = "never"
 wrap-iife = "inside"
 
 [config.eslint]
-root = "./flint-tests/src/js"
-ignore = ["node_modules", "coverage"]
+ignore = ["coverage/"]
 
 [tests.jest]
 enabled = true
@@ -52,7 +51,6 @@ collect_coverage = true
 test_files_include = ["src/*.test.js"]
 test_files_ignore = ["node_modules/", "dist/"]
 
-[config]
 
 [ci.github-actions]
 

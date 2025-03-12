@@ -23,5 +23,11 @@
   "devDependencies": {
     "eslint": "^9.22.0",
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "@stylistic/eslint-plugin-js": "^4.2.0",
+    "@stylistic/eslint-plugin-jsx": "^4.2.0",
+    "@stylistic/eslint-plugin-ts": "^4.2.0"
   }
 }
