@@ -40,7 +40,8 @@ space-before-function-paren = "never"
 wrap-iife = "inside"
 
 [config.eslint]
-ignore = ["coverage/"]
+exclude = ["node_modules", "coverage"]
+include = ["src/*"]
 
 [tests.jest]
 enabled = true
