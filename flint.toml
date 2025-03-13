@@ -57,3 +57,5 @@ exclude = ["node_modules/", "dist/"]
 
 [report.json]
 output_path = "reports"
+
+[report.grafana]
