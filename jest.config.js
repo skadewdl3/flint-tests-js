@@ -1,7 +1,7 @@
 export default {
     testEnvironment : "node",
     testMatch : [
-        "<rootDir>/src/*.test.ts"
+        "<rootDir>/src/*.test.js"
     ],
     rootDir : ".",
     collectCoverage : true,

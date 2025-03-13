@@ -40,9 +40,8 @@ space-before-function-paren = "never"
 wrap-iife = "inside"
 
 [config.eslint]
-exclude = ["**/*.config.js"]
-# exclude = ["node_modules", "coverage"]
-include = ["src/*"]
+exclude = ["*.config.js", "coverage/**/*", "node_modules/**/*"]
+include = ["src/**/*.js"]
 
 [tests.jest]
 enabled = true
@@ -50,7 +49,7 @@ config_path = "src/jest.config.ts"
 test_environment = "node"
 verbose = true
 collect_coverage = true
-include = ["src/*.test.ts"]
+include = ["src/*.test.js"]
 exclude = ["node_modules/", "dist/"]
 
 

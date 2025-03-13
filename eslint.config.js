@@ -7,13 +7,15 @@ import js from "@eslint/js"
 
 export default defineConfig( [
     {
-        files : [
-            "src/*"
-        ],
-        ignores: [
-            "**/*.config.js"
+        files: [
+            "src/**/*.js"
         ] 
     },
+    globalIgnores([
+        "*.config.js",
+        "coverage/**/*",
+        "node_modules/**/*"
+    ]),
     {
         plugins: {
             js: js 
