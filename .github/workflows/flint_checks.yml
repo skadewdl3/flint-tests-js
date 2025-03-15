@@ -31,7 +31,7 @@ jobs:
       name: Upload Test Results
       with:
         name: Test Results
-        path: src/reports
+        path: reports
     - uses: actions/upload-artifact@v4
       name: Upload Logs
       with:
