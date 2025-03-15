@@ -32,10 +32,6 @@ export default defineConfig( [
             "@stylistic/js": stylisticJs 
         },
         rules : {
-            "@stylistic/semi": [
-                "error",
-                "always" 
-            ],
             "@stylistic/quotes": [
                 "error",
                 "double",
@@ -44,18 +40,9 @@ export default defineConfig( [
                     avoidEscape : true 
                 } 
             ],
-            "@stylistic/indent": [
+            "@stylistic/semi": [
                 "error",
-                4,
-                {
-                    FunctionExpression : {},
-                    CallExpression : {},
-                    FunctionDeclaration: {
-                        body : 2,
-                        parameters: 3 
-                    },
-                    SwitchCase : 5 
-                } 
+                "always" 
             ] 
         } 
     } 

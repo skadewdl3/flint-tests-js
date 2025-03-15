@@ -43,6 +43,7 @@ exclude = ["node_modules/", "dist/"]
 
 
 [ci.github-actions]
+artifacts = "src/reports"
 
 [report.json]
 output_path = "reports"
