@@ -1,18 +1,14 @@
 [flint]
 version = 1
-plugins_branch = "plugin-system-improvements"
+plugins_branch = "main"
 
-[common.indent]
-indent_style = "spaces"
-indent_size = 4
-switch_case = 5
-function_declaration = { body = 2, parameters = 3 }
-
-[common]
+[rules.common]
 # Basic style settings
 max_line_length = 100
 quote_style = "double"
 require_semicolons = true
+indent_style = "spaces"
+indent_size = 4
 
 # Naming conventions
 variable_case = "camelCase"
@@ -31,13 +27,6 @@ operator_linebreak = "before"
 
 
 [rules.eslint]
-arrow-parens = "always"
-arrow-spacing = "consistent"
-jsx-quotes = "prefer-double"
-object-curly-spacing = "always"
-array-bracket-spacing = "never"
-space-before-function-paren = "never"
-wrap-iife = "inside"
 
 [config.eslint]
 exclude = ["*.config.js", "coverage/**/*", "node_modules/**/*"]
@@ -58,10 +47,5 @@ exclude = ["node_modules/", "dist/"]
 [report.json]
 output_path = "reports"
 
-[report.db]
-host = "localhost"
-port = 3306
-username = "mysql"
-password = "password"
-database = "mydb"
-flavor = "mysql"
+[report.md]
+output_path = "reports"
