@@ -58,4 +58,10 @@ exclude = ["node_modules/", "dist/"]
 [report.json]
 output_path = "reports"
 
-[report.grafana]
+[report.db]
+host = "localhost"
+port = 3306
+username = "mysql"
+password = "password"
+database = "mydb"
+flavor = "mysql"
