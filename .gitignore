@@ -3,3 +3,4 @@ flint-plugins
 logs.txt
 coverage
 reports
+.env
