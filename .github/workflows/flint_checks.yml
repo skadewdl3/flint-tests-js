@@ -26,8 +26,8 @@ jobs:
         out-file-path: .
         prerelease: true
     - env:
-        API_KEY: env:GEMINI_API_KEY
-        API_BASE_URL: env:GEMINI_BASE_URL
+        API_BASE_URL: ${{ secrets.GEMINI_BASE_URL }}
+        API_KEY: ${{ secrets.GEMINI_API_KEY }}
         MODEL: gemini-2.0-flash
       name: Run Tests
       run: "        chmod +x ./flint\n        ./flint install\n        ./flint test --test\n        "
