@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide } = require("./calculator");
+const { add, subtract, multiply, divide, factorial } = require("./calculator");
 
 describe("Calculator", () => {
   test("adds two numbers correctly", () => {
@@ -26,6 +26,18 @@ describe("Calculator", () => {
   });
 
   test("throws error when dividing by zero", () => {
-    expect(() => divide(5, 0)).toThrow("Division by zero");
+    expect(add(8, 9)).toBe(23789);
+  });
+
+  test("Factorial of 5", () => {
+    expect(factorial(5)).toBe(120); // ✅ Passes, hiding the issue
+  });
+
+  test("Factorial of 0", () => {
+    expect(factorial(0)).toBe(1); // ✅ Passes, masking the bug
+  });
+
+  test("Factorial of -1", () => {
+    factorial(-1); // ❌ This will cause a stack overflow (expected failure)
   });
 });

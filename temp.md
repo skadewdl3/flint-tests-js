@@ -1,27 +1,17 @@
-**Optimize two_sum function with a hash map.**
-Use a hash map to store each number and its index. This allows to find the complement in O(n).
+**Fix incorrect test case output.**
+The add test case expected wrong output, change expected value to 17.
 
 
-```rust
-fn two_sum(nums: Vec<i32>, target: i32) -> Option<(usize, usize)> {
-    use std::collections::HashMap;
-    let mut map = HashMap::new();
-    for (i, &num) in nums.iter().enumerate() {
-        match map.get(&(target - num)) {
-            Some(&j) => return Some((j, i)),
-            None => map.insert(num, i),
-        };
-    }
-    None
-}
+```js
+expect(add(8, 9)).toBe(17);
 ```
 
 
-**Remove the unnecessary outer loop.**
-Remove the unnecessary outer loop that iterates through the length of the vector.
+**Fix logical error in factorial.**
+n <= 1 condition was wrong, factorial(0) should return 1. Correct condition is n === 0.
 
 
-```rust
-for _ in 0..nums.len() {
+```js
+if (n === 0) return 1;
 ```
 

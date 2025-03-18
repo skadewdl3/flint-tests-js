@@ -46,7 +46,7 @@ exclude = ["node_modules/", "dist/"]
 [ci.github-actions]
 artifacts = "reports"
 
-# [report.db]
+# [report.db.env]
 # host = "env:MYSQL_HOST"
 # port = "env:MYSQL_PORT"
 # username = "env:MYSQL_USERNAME"
@@ -59,7 +59,7 @@ output_path = "reports"
 # [report.md]
 # output_path = "reports"
 
-# [report.ai]
-# api_key = "env:GEMINI_API_KEY"
-# api_base_url = "env:GEMINI_BASE_URL"
-# model = "gemini-2.0-flash"
+[report.ai.env]
+API_BASE_URL = "env:GEMINI_BASE_URL"
+API_KEY = "env:GEMINI_API_KEY"
+MODEL = "gemini-2.0-flash"

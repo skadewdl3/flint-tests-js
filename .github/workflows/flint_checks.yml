@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: 18.x
     - name: Install Node.js dependencies
-      run: npm install -g eslint@latest jest@latest --no-fund --no-audit --silent
+      run: npm install -g jest@latest --no-fund --no-audit --silent
     - uses: robinraju/release-downloader@v1
       name: Install Flint
       with:
@@ -37,5 +37,9 @@ jobs:
       with:
         name: Logs
         path: logs.txt
+    env:
+      API_BASE_URL: ${{ secrets.GEMINI_BASE_URL }}
+      API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      model: gemini-2.0-flash
     name: Flint Checks
     runs-on: ubuntu-latest
