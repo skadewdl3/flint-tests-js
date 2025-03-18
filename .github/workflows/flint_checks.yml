@@ -1,42 +1,42 @@
 on:
   pull_request:
     branches:
-    - main
+      - main
   push:
     branches:
-    - main
+      - main
 name: Flint CI
 jobs:
   flint_checks:
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    - uses: actions/setup-node@v3
-      name: Install Node.js
-      with:
-        node-version: 18.x
-    - name: Install Node.js dependencies
-      run: npm install -g jest@latest --no-fund --no-audit --silent
-    - uses: robinraju/release-downloader@v1
-      name: Install Flint
-      with:
-        latest: true
-        repository: skadewdl3/flint
-        fileName: flint
-        out-file-path: .
-        prerelease: true
-    - name: Run Tests
-      run: "        chmod +x ./flint\n        ./flint install\n        ./flint test --test\n        "
-    - uses: actions/upload-artifact@v4
-      name: Upload Test Results
-      with:
-        name: Test Results
-        path: reports
-    - uses: actions/upload-artifact@v4
-      name: Upload Logs
-      with:
-        name: Logs
-        path: logs.txt
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        name: Install Node.js
+        with:
+          node-version: 18.x
+      - name: Install Node.js dependencies
+        run: npm install -g jest@latest --no-fund --no-audit --silent
+      - uses: robinraju/release-downloader@v1
+        name: Install Flint
+        with:
+          latest: true
+          repository: skadewdl3/flint
+          fileName: flint
+          out-file-path: .
+          prerelease: true
+      - name: Run Tests
+        run: "        chmod +x ./flint\n        ./flint install\n        RUST_BACKTRACE=1 ./flint test --test\n        "
+      - uses: actions/upload-artifact@v4
+        name: Upload Test Results
+        with:
+          name: Test Results
+          path: reports
+      - uses: actions/upload-artifact@v4
+        name: Upload Logs
+        with:
+          name: Logs
+          path: logs.txt
     env:
       API_BASE_URL: ${{ secrets.GEMINI_BASE_URL }}
       API_KEY: ${{ secrets.GEMINI_API_KEY }}
