@@ -59,6 +59,8 @@ output_path = "reports"
 # [report.md]
 # output_path = "reports"
 
+[report.ai]
+output_path = "reports"
 [report.ai.env]
 API_BASE_URL = "env:GEMINI_BASE_URL"
 API_KEY = "env:GEMINI_API_KEY"
