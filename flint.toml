@@ -1,6 +1,6 @@
 [flint]
 version = 1
-plugins_branch = "main"
+plugins_branch = "locust"
 env = ".env"
 
 [rules.common]

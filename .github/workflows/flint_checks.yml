@@ -1,11 +1,15 @@
 on:
   pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
     branches:
       - main
   push:
     branches:
       - main
-name: Flint CI Workflow
+name: Flint CI
 jobs:
   flint_checks:
     permissions:
