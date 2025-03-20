@@ -1,6 +1,6 @@
 [flint]
 version = 1
-plugins_branch = "main"
+plugins_branch = "locust"
 env = ".env"
 
 [rules.common]
@@ -11,23 +11,11 @@ require_semicolons = true
 indent_style = "spaces"
 indent_size = 4
 
-# Naming conventions
-variable_case = "camelCase"
-function_case = "camelCase"
-class_case = "PascalCase"
-constant_case = "UPPER_CASE"
-
 # Whitespace rules
 no_trailing_spaces = true
 no_multiple_empty_lines = true
-space_before_blocks = true
 
-# Operator and syntax styling (cross-language)
-indent_binary_ops = true
-operator_linebreak = "before"
-
-
-# [rules.eslint]
+[rules.eslint]
 
 [config.eslint]
 exclude = ["*.config.js", "coverage/**/*", "node_modules/**/*"]
