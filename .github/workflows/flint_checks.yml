@@ -31,15 +31,15 @@ jobs:
         out-file-path: .
         prerelease: true
     - env:
-        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         GEMINI_BASE_URL: ${{ secrets.GEMINI_BASE_URL }}
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         MODEL: gemini-2.0-flash
       name: Run Tests
       run: "        chmod +x ./flint\n        ./flint install\n        ./flint test --test\n        "
     - env:
         GH_TOKEN: '${{ secrets.GH_TOKEN }} '
       name: Comment AI Suggestions
-      run: "        if [ -f temp.md ]; then\n        gh pr comment ${{ github.event.pull_request.number }} --body \"$(cat temp.md)\"\n        else\n        echo \"AI suggestions not found, skipping PR comment.\"\n        fi\n        "
+      run: "        if [ -f temp.md ]; then\n        gh pr comment ${{ github.event.pull_request.number }} --body \"$(cat reports/temp.md)\"\n        else\n        echo \"AI suggestions not found, skipping PR comment.\"\n        fi\n        "
     - uses: actions/upload-artifact@v4
       name: Upload Test Results
       with:
