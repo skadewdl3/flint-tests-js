@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: 18.x
     - name: Install Node.js dependencies
-      run: npm install -g @stylisic/eslint-config@latest @stylisic/eslint-plugin@latest @stylisic/eslint-plugin-js@latest @stylisic/eslint-plugin-jsx@latest eslint@latest jest@latest --no-fund --no-audit --silent
+      run: npm install -g @stylistic/eslint-config@latest @stylistic/eslint-plugin@latest @stylistic/eslint-plugin-js@latest @stylistic/eslint-plugin-jsx@latest eslint@latest jest@latest --no-fund --no-audit --silent
     - uses: robinraju/release-downloader@v1
       name: Install Flint
       with:
@@ -28,7 +28,7 @@ jobs:
     - env:
         GEMINI_BASE_URL: ${{ secrets.GEMINI_BASE_URL }}
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        MODEL: deepseek-coder
+        MODEL: gemini-2.0-flash
       name: Run Tests
       run: "        chmod +x ./flint\n        ./flint install\n        ./flint test --test\n        "
     - env:
