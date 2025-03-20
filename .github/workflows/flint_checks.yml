@@ -10,14 +10,12 @@ jobs:
   flint_checks:
     steps:
     - uses: actions/checkout@v4
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       name: Checkout code
       with:
-        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
         ref: ${{ github.event.pull_request.head.ref || github.ref_ame }}
-        token: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
         persist-credentials: false
+        repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
     - uses: actions/setup-node@v3
       name: Install Node.js
       with:
@@ -33,8 +31,8 @@ jobs:
         out-file-path: .
         prerelease: true
     - env:
-        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         GEMINI_BASE_URL: ${{ secrets.GEMINI_BASE_URL }}
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         MODEL: gemini-2.0-flash
       name: Run Tests
       run: "        chmod +x ./flint\n        ./flint install\n        ./flint test --test\n        "
