@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-name: Flint CI Workflow
+name: Flint CI
 jobs:
   flint_checks:
     steps:
