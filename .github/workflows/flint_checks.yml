@@ -28,7 +28,7 @@ jobs:
       with:
         node-version: 18.x
     - name: Install Node.js dependencies
-      run: npm install -g @eslint@latest @stylistic/eslint-config@latest @stylistic/eslint-plugin@latest @stylistic/eslint-plugin-js@latest @stylistic/eslint-plugin-jsx@latest eslint@latest jest@latest --no-fund --no-audit --silent
+      run: npm install -g @eslint/js@latest @stylistic/eslint-config@latest @stylistic/eslint-plugin@latest @stylistic/eslint-plugin-js@latest @stylistic/eslint-plugin-jsx@latest jest@latest --no-fund --no-audit --silent
     - uses: robinraju/release-downloader@v1
       name: Install Flint
       with:
@@ -38,10 +38,15 @@ jobs:
         out-file-path: .
         prerelease: true
     - env:
-        REPO_BRANCH_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}
+        MYSQL_PORT: ${{ secrets.MYSQL_PORT }}
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        GEMINI_BASE_URL: ${{ secrets.GEMINI_BASE_URL }}
         MODEL: gemini-2.0-flash
+        REPO_BRANCH_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}
+        MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
+        GEMINI_BASE_URL: ${{ secrets.GEMINI_BASE_URL }}
+        MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+        MYSQL_USERNAME: ${{ secrets.MYSQL_USERNAME }}
+        MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
       name: Run Tests
       run: "        chmod +x ./flint\n        ./flint install\n        ./flint test\n        "
     - env:
