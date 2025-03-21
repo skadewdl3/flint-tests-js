@@ -1,6 +1,6 @@
 [flint]
 version = 1
-plugins_branch = "main"
+plugins_branch = "final-stretch"
 env = ".env"
 
 [rules.common]
